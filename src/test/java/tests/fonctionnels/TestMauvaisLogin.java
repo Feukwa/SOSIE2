@@ -1,5 +1,6 @@
 package tests.fonctionnels;
 
+
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -9,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestEssaiLogin {
+public class TestMauvaisLogin {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -20,21 +21,37 @@ public class TestEssaiLogin {
 	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
     driver = new FirefoxDriver();
     baseUrl = "https://www.katalon.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
   }
+  
 
   @Test
-  public void TestEssaiLogin() throws Exception {
+  public void testCreateEtEditeCompte() throws Exception {
+	Thread.sleep(2000);
     driver.get("http://localhost:8080/login");
-    driver.findElement(By.name("username")).click();
-    driver.findElement(By.name("username")).clear();
-    driver.findElement(By.name("username")).sendKeys("111");
-    driver.findElement(By.xpath("//table")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.name("username")).sendKeys("121");
+    Thread.sleep(2000);
     driver.findElement(By.name("password")).click();
     driver.findElement(By.name("password")).clear();
     driver.findElement(By.name("password")).sendKeys("111");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div")).click();
     driver.findElement(By.xpath("//button[@type='submit']")).click();
-    driver.findElement(By.xpath("//form[@action='/login']")).click();
+    driver.findElement(By.name("username")).sendKeys("999");
+    Thread.sleep(2000);
+    driver.findElement(By.name("password")).click();
+    driver.findElement(By.name("password")).clear();
+    driver.findElement(By.name("password")).sendKeys("999");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.linkText("Editer")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//input[@value='Edit']")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//input[@value='deconnexion']")).click();
+    Thread.sleep(2000);
   }
 
   @After
@@ -79,5 +96,3 @@ public class TestEssaiLogin {
     }
   }
 }
-
-
