@@ -3,7 +3,6 @@ package com.architecture.logicielle.repository.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +15,11 @@ import javax.persistence.Table;
 @Entity // This tells Hibernate to make a table out of this class
 public class UniteEnseignementEntity implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name = "identifiant")
     private String identifiant;

@@ -1,12 +1,9 @@
 package com.architecture.logicielle.mvc.data;
 
 
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.architecture.logicielle.repository.entities.UserEntity;
-
-import javax.persistence.Id;
 
 
 public class UniteEnseignementView {
