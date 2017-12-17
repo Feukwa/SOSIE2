@@ -3,6 +3,8 @@ package tests.fonctionnels;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -10,18 +12,33 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import org.junit.*;
+import org.monte.screenrecorder.ScreenRecorder;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.monte.media.math.Rational;
+import org.monte.media.Format;
+import static org.monte.media.AudioFormatKeys.*;
+import static org.monte.media.VideoFormatKeys.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+
 public class TestMauvaisLogin {
-  private WebDriver driver;
-  private String baseUrl;
+  private static WebDriver driver;
+  private static String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Before
   public void setUp() throws Exception {
 	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
+	//screenRecorder.start();
     driver = new FirefoxDriver();
     baseUrl = "https://www.katalon.com/";
-    driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
   
 
@@ -52,15 +69,6 @@ public class TestMauvaisLogin {
     Thread.sleep(2000);
     driver.findElement(By.xpath("//input[@value='deconnexion']")).click();
     Thread.sleep(2000);
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
   }
 
   private boolean isElementPresent(By by) {

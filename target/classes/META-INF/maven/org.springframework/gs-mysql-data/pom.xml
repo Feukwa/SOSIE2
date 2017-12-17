@@ -64,6 +64,18 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- selenium -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		</dependency>
+		<!-- screen recorder -->
+		<dependency>
+		    <groupId>com.pojosontheweb</groupId>
+		    <artifactId>monte-repack</artifactId>
+		    <version>1.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<properties>
