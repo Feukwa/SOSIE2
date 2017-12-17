@@ -19,10 +19,10 @@ public class TestCreerUE {
   public void setUp() throws Exception {
 	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
     driver = new FirefoxDriver();
-    baseUrl = "https://www.katalon.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
+  //@Ignore
   @Test
   public void testCreerUE() throws Exception {
     driver.get("http://localhost:8080/login");

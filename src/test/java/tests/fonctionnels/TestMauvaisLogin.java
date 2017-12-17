@@ -37,11 +37,10 @@ public class TestMauvaisLogin {
 	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
 	//screenRecorder.start();
     driver = new FirefoxDriver();
-    baseUrl = "https://www.katalon.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
   
-
+  //@Ignore
   @Test
   public void testCreateEtEditeCompte() throws Exception {
 	Thread.sleep(2000);
