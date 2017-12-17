@@ -34,13 +34,13 @@ public class TestMauvaisLogin {
 
   @Before
   public void setUp() throws Exception {
-	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","src\\test\\ressources\\geckodriver.exe");
 	//screenRecorder.start();
     driver = new FirefoxDriver();
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
   }
   
-  //@Ignore
+  @Ignore
   @Test
   public void testCreateEtEditeCompte() throws Exception {
 	Thread.sleep(2000);
@@ -67,7 +67,6 @@ public class TestMauvaisLogin {
     driver.findElement(By.xpath("//input[@value='Edit']")).click();
     Thread.sleep(2000);
     driver.findElement(By.xpath("//input[@value='deconnexion']")).click();
-    Thread.sleep(2000);
   }
 
   private boolean isElementPresent(By by) {

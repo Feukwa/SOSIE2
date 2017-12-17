@@ -17,12 +17,12 @@ public class TestCreerUE {
 
   @Before
   public void setUp() throws Exception {
-	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","src\\test\\ressources\\geckodriver.exe");
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  //@Ignore
+  @Ignore
   @Test
   public void testCreerUE() throws Exception {
     driver.get("http://localhost:8080/login");
