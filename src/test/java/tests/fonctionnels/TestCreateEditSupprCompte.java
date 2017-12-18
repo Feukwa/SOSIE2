@@ -18,12 +18,12 @@ public class TestCreateEditSupprCompte {
 
   @Before
   public void setUp() throws Exception {
-	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","src\\test\\ressources\\geckodriver.exe");
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
   }
-  
-  @Ignore
+
+  //@Ignore
   @Test
   public void testCreateEtEditeCompte() throws Exception {
     driver.get("http://localhost:8080/login");

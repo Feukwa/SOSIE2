@@ -17,11 +17,12 @@ public class TestEditerEtCreerSatge {
 
   @Before
   public void setUp() throws Exception {
-	System.setProperty("webdriver.gecko.driver","C:\\Mes_jars\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver","src\\test\\ressources\\geckodriver.exe");
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
+  //@Ignore
   @Test
   public void testEditerEtCreerSatge() throws Exception {
     driver.get("http://localhost:8080/login");
@@ -35,7 +36,7 @@ public class TestEditerEtCreerSatge {
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     Thread.sleep(2000);
     driver.findElement(By.linkText("Stage")).click();
-    Thread.sleep(2000);
+    Thread.sleep(4000);
     driver.findElement(By.xpath("//input[@value='deconnexion']")).click();
     Thread.sleep(2000);
     driver.findElement(By.name("username")).click();

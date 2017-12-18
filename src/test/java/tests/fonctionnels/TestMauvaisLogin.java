@@ -40,7 +40,7 @@ public class TestMauvaisLogin {
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
   }
   
-  @Ignore
+  //@Ignore
   @Test
   public void testCreateEtEditeCompte() throws Exception {
 	Thread.sleep(2000);
