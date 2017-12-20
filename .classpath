@@ -36,5 +36,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Mes_jars/selenium-server-standalone-3.8.1.jar"/>
 	<classpathentry kind="lib" path="C:/Mes_jars/screen-recorder-0.7.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

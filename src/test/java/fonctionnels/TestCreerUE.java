@@ -1,4 +1,4 @@
-package tests.fonctionnels;
+package fonctionnels;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -22,7 +22,7 @@ public class TestCreerUE {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  //@Ignore
+  @Ignore
   @Test
   public void testCreerUE() throws Exception {
     driver.get("http://localhost:8080/login");

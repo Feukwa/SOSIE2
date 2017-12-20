@@ -1,4 +1,4 @@
-package tests.fonctionnels;
+package fonctionnels;
 
 
 import java.util.regex.Pattern;

@@ -29,12 +29,17 @@ public class UniteEnseignementView {
     @NotNull
     private String description;
     
+	public UniteEnseignementView(String identifiant, String nom, String firstname, String lastname,
+			String description) {
+		super();
+		this.identifiant = identifiant;
+		this.nom = nom;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.description = description;
+	}
     
-	
-	
-	
-	
-	
+
 	public UniteEnseignementView(UniteEnseignementView ue1, UniteEnseignementView ue2) {
 		ue1.identifiant = ue2.identifiant;
 		ue1.nom = ue2.nom;
@@ -95,11 +100,4 @@ public class UniteEnseignementView {
 				+ ", lastname=" + lastname + ", description=" + description + "]";
 	}
 
-
-
-	
-
-	
-	
-	
 }
