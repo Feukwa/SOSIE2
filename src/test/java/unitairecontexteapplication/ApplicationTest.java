@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ContextConfiguration
 public class ApplicationTest {
-	@Ignore
+	//@Ignore
 	@Test
     public void contextLoads() throws Exception {
     }

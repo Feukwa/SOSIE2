@@ -21,7 +21,7 @@ public class ControllerTest {
 	@Autowired
     private WebController controller;
 
-	@Ignore
+	//@Ignore
     @Test
     public void contexLoads() throws Exception {
         assertThat(controller).isNotNull();
