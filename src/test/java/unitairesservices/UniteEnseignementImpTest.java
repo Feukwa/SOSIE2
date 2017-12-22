@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.architecture.logicielle.Application;
@@ -27,6 +28,7 @@ import com.architecture.logicielle.mvc.data.UniteEnseignementView;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
+@PropertySource("application.properties")
 public class UniteEnseignementImpTest {
 	
 	@Autowired
@@ -48,33 +50,33 @@ public class UniteEnseignementImpTest {
 	@Ignore
 	@Test
     public void testParseUniteEnseignementViewToUniteEnseignementEntityy() throws Exception {
-		UniteEnRepository.deleteAll();
-		userRepository.deleteAll();
+		//UniteEnRepository.deleteAll();
+		//userRepository.deleteAll();
 		userRepository.save(userEntTeacher);
 		assertEquals(ueEntity,ueService.parseUniteEnseignementViewToUniteEnseignementEntity(ueview, userRepository));
 		userRepository.delete(userEntTeacher);
 		assertNull(ueService.parseUniteEnseignementViewToUniteEnseignementEntity(ueview, userRepository));
     }
 		
-	@Ignore	
+	//@Ignore	
 	@Test
     public void testSaveUniteEnseignement() throws Exception {
 		userRepository.save(userEntTeacherTest);
 		ueService.saveUniteEnseignement(ueEntity, UniteEnRepository, userRepository);
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testCheckUniteEnseignement() throws Exception {
 		//ueService.saveUniteEnseignement(ueEntity, UniteEnRepository, userRepository);
-		userRepository.deleteAll();
+		//userRepository.deleteAll();
 		UniteEnRepository.deleteAll();
 		userRepository.save(userEntTeacher);
 		UniteEnRepository.save(ueEntity);
 		assertEquals(ueEntity, ueService.checkUniteEnseignement(ueEntity, UniteEnRepository));
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testGetUniteEnseignementById() throws Exception {
 		userRepository.save(userEntTeacherTest);
@@ -82,24 +84,24 @@ public class UniteEnseignementImpTest {
 		assertEquals(ueEntity, ueService.GetUniteEnseignementById(ueEntity.getIdentifiant(), UniteEnRepository));
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testParseUserEntityToUniteEnseignementView() throws Exception {
 		assertEquals(ueService.parseUserEntityToUniteEnseignementView(ueEntity),ueview);
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testdeleteUniteEnseignementw() throws Exception {
-		userRepository.deleteAll();
-		UniteEnRepository.deleteAll();
+		//userRepository.deleteAll();
+		//UniteEnRepository.deleteAll();
 		userRepository.save(userEntTeacher);
 		UniteEnRepository.save(ueEntity);
 		ueService.deleteUniteEnseignement(ueEntity, UniteEnRepository);
 		assertNull(UniteEnRepository.findOne("1234"));
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testgetListUE() throws Exception {
 		userRepository.save(userEntTeacher);

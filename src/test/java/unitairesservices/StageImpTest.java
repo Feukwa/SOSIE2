@@ -29,7 +29,7 @@ public class StageImpTest {
 	
 	private StageView stageView = new StageView();
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testDeleteStage() throws Exception {
 	

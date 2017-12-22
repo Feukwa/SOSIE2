@@ -68,14 +68,14 @@ public class HttpRequestTest {
         this.mockMvc = MockMvcBuilders.standaloneSetup(webController).setViewResolvers(viewResolver).build();
     }
     
-    @Ignore
+    //@Ignore
     @Test
     public void testShowFromInscription() throws Exception {
         mockMvc.perform(get("/inscription"))
         	       .andExpect(status().isOk());
      }
     
-    @Ignore
+    //@Ignore
     @Test
     public void testInscriptionSubmit() throws Exception {
     		userRepository.deleteAll();
@@ -94,7 +94,7 @@ public class HttpRequestTest {
         		.andExpect(status().isOk()).andExpect(model().attribute("ErrorMessage", "Inalid from !"));
      }
     
-    @Ignore
+    //@Ignore
     @Test
     public void testEditProfileSubmit() throws Exception {
     	mockMvc.perform(post("/edit")

@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.architecture.logicielle.Application;
@@ -24,6 +25,7 @@ import com.architecture.logicielle.service.UserServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
+@PropertySource("application.properties")
 public class userImpTest {	
 	
 	@Autowired
@@ -38,19 +40,19 @@ public class userImpTest {
 	private UserEntity userEntTeacher =  new UserEntity("Nicolas","Dos Santos","teacher","nicola@gmail.com","nico",file,idTeacher);
 	private UserView userview =  new UserView("alexis","fiers","student","alexis.fiers@gmail.com","admin",file,id);
 
-	@Ignore
+	//@Ignore
 	@Test
     public void testparseUserViewToUserEntity() throws Exception {
 		assertThat(userService.parseUserViewToUserEntity(userview)).isEqualTo(userEnt);
     }
 
-	@Ignore
+	//@Ignore
 	@Test
     public void testParseUserEntityToUserView() throws Exception {
 		assertEquals(userService.parseUserEntityToUserView(userEnt), userview);
     }
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testSaveUser() throws Exception {
 		userService.saveUser(userEnt, userRepo);
@@ -58,7 +60,7 @@ public class userImpTest {
 		assertEquals(newUser, userEnt);
     }
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testCheckUser() throws Exception {
 		UserEntity userEntReturn = userService.checkUser(userEnt, userRepo);
@@ -66,7 +68,7 @@ public class userImpTest {
 		assertEquals(newUser, userEntReturn);
     }
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testGetUserById() throws Exception {
 		UserEntity userEntReturn = userService.GetUserById(id, userRepo);
@@ -74,7 +76,7 @@ public class userImpTest {
 		assertEquals(newUser, userEntReturn);
     }
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testDeleteUser() throws Exception {
 
@@ -83,7 +85,7 @@ public class userImpTest {
 		assertNull(newUser);
     }
 	
-    @Ignore
+    //@Ignore
 	@Test
     public void testGetUserByNAme() throws Exception {
 		userService.saveUser(userEnt, userRepo);
@@ -93,7 +95,7 @@ public class userImpTest {
 		assertNull(userService.getUserByNAme(userEnt.getFirstName(), userEnt.getLastName(), userRepo));
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
     public void testGetAllTeachers() throws Exception {
 		userService.saveUser(userEntTeacher, userRepo);
